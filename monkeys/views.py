@@ -5,7 +5,7 @@ from monkeys.models import Monkey
 
 def list(request):
     template_name = 'monkeys/list.html'
-    monkeys = Monkey.objects.homepage()
+    monkeys = Monkey.objects.all()
 
     context = {
         'monkeys': monkeys,
@@ -20,7 +20,7 @@ def list(request):
 
 def detail(request, pk):
     template_name = 'monkeys/detail.html'
-    monkey = Monkey.objects.get(pk=pk)
+    monkey = Monkey.objects.get(title=pk)
 
     context = {
         'monkey': monkey,

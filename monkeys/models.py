@@ -17,7 +17,7 @@ class Monkey(models.Model):
         return get_thumbnail(self.upload, '300x300', crop='center', quality=51)
 
     def img_tmb(self):
-        if self.upload:
+        if self.image:
             return mark_safe(
                 f'<img src="{self.get_img.url}">'
             )
@@ -32,7 +32,7 @@ class Monkey(models.Model):
     cleanup_pre_delete.connect(sorl_delete)
 
     def __str__(self):
-        return self.upload.url
+        return self.image.url
 
     class Meta:
         verbose_name = 'monkey'

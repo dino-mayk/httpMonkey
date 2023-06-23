@@ -1,7 +1,7 @@
 from django.urls import path
-from posts import views
+from monkeys import views
 
-app_name = 'posts'
+app_name = 'monkeys'
 
 urlpatterns = [
     path(
@@ -10,7 +10,7 @@ urlpatterns = [
         name='list',
     ),
     path(
-        '<int:pk>/',
+        'status/<int:pk>/',
         views.detail,
         name='detail',
     ),
