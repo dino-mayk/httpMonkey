@@ -1,4 +1,5 @@
 from django.urls import path
+
 from monkeys import views
 
 app_name = 'monkeys'

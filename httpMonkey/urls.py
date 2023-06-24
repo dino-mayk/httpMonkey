@@ -6,14 +6,18 @@ from django.urls import include, path
 urlpatterns = [
     path(
         '',
-        include(
-            'monkeys.urls',
-        ),
+        include('monkeys.urls'),
         name='monkeys',
+    ),
+    path(
+        'tinymce/',
+        include('tinymce.urls'),
+        name='tinymce',
     ),
     path(
         'admin/',
         admin.site.urls,
+        name='admin',
     ),
 ]
 

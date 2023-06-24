@@ -26,6 +26,7 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = [
     'monkeys.apps.MonkeysConfig',
 
+    'tinymce',
     # 'grappelli',
     'sorl.thumbnail',
 

@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
-    {% include 'includes/monkey_card.html' with monkey=monkey %}
+    <link href="{% static 'other/monkeys/css/detail.css' %}" rel="stylesheet">
+
+    <div class="card bg-dark">
+        <h1>{{ monkey.code }} {{ monkey.title }}</h1>
+        <img src="{{ monkey }}" class="d-block" alt="фото обезьяны">
+        <div class="card-body">
+            <h2>Description</h2>
+            <p class="card-text">{{ monkey.description }}</p>
+            
+        </div>
+    </div>
 {% endblock %}
-<div class="container">
-    
-</div>

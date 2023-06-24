@@ -2,15 +2,21 @@ from django.db import models
 from django.utils.safestring import mark_safe
 from django_cleanup.signals import cleanup_pre_delete
 from sorl.thumbnail import delete, get_thumbnail
+from tinymce.models import HTMLField
 
 
 class Monkey(models.Model):
-    title = models.IntegerField()
+    code = models.SmallIntegerField()
+    title = models.CharField(
+        unique=True,
+    )
     image = models.ImageField(
         upload_to='images/%Y/%m',
         verbose_name="image",
         help_text='load image'
     )
+    description = HTMLField()
+    source = models.URLField()
 
     @property
     def get_img(self):

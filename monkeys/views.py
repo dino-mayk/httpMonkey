@@ -20,7 +20,7 @@ def list(request):
 
 def detail(request, pk):
     template_name = 'monkeys/detail.html'
-    monkey = Monkey.objects.get(title=pk)
+    monkey = Monkey.objects.get(code=pk)
 
     context = {
         'monkey': monkey,
