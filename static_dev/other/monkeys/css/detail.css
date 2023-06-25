@@ -1,5 +1,7 @@
 .card {
-    width: 40rem;
+    max-width: 40rem;
     border: none;
     color: white;
+    margin-left: auto;
+    margin-right: auto;
 }

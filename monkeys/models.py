@@ -16,7 +16,6 @@ class Monkey(models.Model):
         help_text='load image'
     )
     description = HTMLField()
-    source = models.URLField()
 
     @property
     def get_img(self):

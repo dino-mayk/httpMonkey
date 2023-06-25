@@ -5,13 +5,16 @@
 {% block content %}
     <link href="{% static 'other/monkeys/css/detail.css' %}" rel="stylesheet">
 
+    <nav>
+        <a class="text-white" href="{% url 'monkeys:list' %}">&lt; Back to home</a>
+    </nav>
+
     <div class="card bg-dark">
-        <h1>{{ monkey.code }} {{ monkey.title }}</h1>
-        <img src="{{ monkey }}" class="d-block" alt="фото обезьяны">
+        <h1 class="text-center">{{ monkey.code }} {{ monkey.title }}</h1>
+        <img src="{{ monkey }}" class="card-img" alt="фото обезьяны">
         <div class="card-body">
-            <h2>Description</h2>
-            <p class="card-text">{{ monkey.description }}</p>
-            
+            <h2 class="text-center">Description</h2>
+            <p class="card-text">{{ monkey.description | safe }}</p>
         </div>
     </div>
 {% endblock %}
