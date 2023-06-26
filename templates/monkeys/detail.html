@@ -3,15 +3,15 @@
 {% load static %}
 
 {% block content %}
-    <link href="{% static 'other/monkeys/css/detail.css' %}" rel="stylesheet">
+    <link href="{% static 'other/css/detail.css' %}" rel="stylesheet">
 
     <nav>
-        <a class="text-white" href="{% url 'monkeys:list' %}">&lt; Back to home</a>
+        <a class="text-white" href="{% url 'homepage:index' %}">&lt; Back to home</a>
     </nav>
 
     <div class="card bg-dark">
         <h1 class="text-center">{{ monkey.code }} {{ monkey.title }}</h1>
-        <img src="{{ monkey }}" class="card-img" alt="фото обезьяны">
+        <img src="{{ monkey }}" class="card-img" alt="monkey image">
         <div class="card-body">
             <h2 class="text-center">Description</h2>
             <p class="card-text">{{ monkey.description | safe }}</p>

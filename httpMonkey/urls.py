@@ -6,6 +6,11 @@ from django.urls import include, path
 urlpatterns = [
     path(
         '',
+        include('homepage.urls'),
+        name='homepage',
+    ),
+    path(
+        '',
         include('monkeys.urls'),
         name='monkeys',
     ),

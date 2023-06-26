@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'other/css/index.css' %}">
+
+<div class="container">
+
+    {% if monkeys %}
+        <div class="row">
+          {% for monkey in monkeys %}
+                {% include "includes/monkey_card.html" with monkey=monkey %}
+          {% endfor %}
+        </div>
+    {% else %}
+        <h2 class="text-center m-5">No monkeys yet:(</h2>
+    {% endif %}
+    
+</div>
+{% endblock %}

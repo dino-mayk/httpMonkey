@@ -24,6 +24,7 @@ ALLOWED_HOSTS = [
 ]
 
 INSTALLED_APPS = [
+    'homepage.apps.HomepageConfig',
     'monkeys.apps.MonkeysConfig',
 
     'tinymce',
