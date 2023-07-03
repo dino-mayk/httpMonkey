@@ -10,3 +10,7 @@
 .card-body {
     background-color: #d0383e;
 }
+
+a {
+    text-decoration: none;
+}
