@@ -11,7 +11,7 @@ class Monkey(models.Model):
         unique=True,
     )
     image = models.ImageField(
-        upload_to='images/%Y/%m',
+        upload_to='images/monkeys/%Y/%m',
         verbose_name="image",
         help_text='load image'
     )
