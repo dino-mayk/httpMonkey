@@ -20,6 +20,11 @@ urlpatterns = [
         name='tinymce',
     ),
     path(
+        'grappelli/',
+        include('grappelli.urls'),
+        name='grappelli',
+    ),
+    path(
         'admin/',
         admin.site.urls,
         name='admin',

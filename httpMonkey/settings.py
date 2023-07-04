@@ -26,9 +26,11 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'monkeys.apps.MonkeysConfig',
+    'contacts.apps.ContactsConfig',
 
     'tinymce',
-    # 'grappelli',
+    'grappelli',
+    'ckeditor',
     'sorl.thumbnail',
 
     'django.contrib.admin',
