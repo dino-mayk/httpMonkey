@@ -1,8 +1,8 @@
 <div class="container">
     <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 my-4">
-        {% for contact in contacts %}
-            <a href="{{ contact.link }}" class="m-3">
-                {{ contact.icon | safe}}                 
+        {% for contact in contacts %} 
+            <a href="{{ contact.link }}" target="_blank" class="m-3">
+                {{ contact.icon | safe}}        
             </a>
         {% endfor %}
     </footer>
