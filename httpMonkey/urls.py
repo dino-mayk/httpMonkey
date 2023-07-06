@@ -15,6 +15,11 @@ urlpatterns = [
         name='monkeys',
     ),
     path(
+        '',
+        include('api.urls'),
+        name='api',
+    ),
+    path(
         'tinymce/',
         include('tinymce.urls'),
         name='tinymce',

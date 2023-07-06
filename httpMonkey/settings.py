@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'monkeys.apps.MonkeysConfig',
     'contacts.apps.ContactsConfig',
+    'api.apps.ApiConfig',
 
     'tinymce',
     'grappelli',
