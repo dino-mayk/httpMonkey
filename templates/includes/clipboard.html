@@ -1,0 +1,13 @@
+{% load static %}
+
+<link href="{% static 'other/css/clipboard.css' %}" rel="stylesheet">
+
+<div class="clipboard-example align-items-center w-50">
+	<div class="input-group mb-3">
+		<input id="in01" type="text" class="form-control" placeholder="BTC Address..." aria-label="BTC Address" aria-describedby="btn01" value="39XMhLRH54kNyYHfiUWC8xrz5HRmZQxL7f" readonly>
+		<button id="btn01" class="btn btn-secondary" type="button" data-clipboard-demo="" data-clipboard-target="#in01" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Copy to Clipboard">Copy</button>
+	</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script src="{% static 'other/js/clipboard.js' %}"></script>
