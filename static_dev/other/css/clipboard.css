@@ -1,8 +1,8 @@
-.usage {
+.alert {
+    background-color: #444444;
     color: white;
 }
 
-.background {
-    background-color: #444444;
-    height: 80px;
+.alert-text {
+    font-size: 23px;
 }

@@ -3,14 +3,7 @@
     max-height: 450px;
     width: auto;
     height: auto;
-    border: none;
-    color:white;
-}
-
-.card-body {
     background-color: #d0383e;
-}
-
-a {
-    text-decoration: none;
+    color: white;
+    border: none;
 }
