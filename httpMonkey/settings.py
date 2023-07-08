@@ -13,21 +13,22 @@ load_dotenv(dotenv_path)
 DEBUG = os.environ.get('DEBUG', default='True') == 'True'
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-"""ENGINE = os.environ.get('ENGINE')
+ENGINE = os.environ.get('ENGINE')
 NAME = os.environ.get('NAME')
 USER = os.environ.get('USER')
 PASSWORD = os.environ.get('PASSWORD')
 HOST = os.environ.get('HOST')
-PORT = os.environ.get('PORT')"""
+PORT = os.environ.get('PORT')
 
 ALLOWED_HOSTS = [
-    '.versel.app',
+    '.vercel.app',
     '.now.sh',
 ]
 
 """ALLOWED_HOSTS = [
     '*',
 ]"""
+
 
 INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
@@ -137,8 +138,8 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATICFILES_DIRS = [BASE_DIR / 'static',]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 """STATICFILES_DIRS = [
     BASE_DIR / 'static_dev',
