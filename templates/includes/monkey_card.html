@@ -1,0 +1,15 @@
+{% load static %}
+
+<link href="{% static 'other/css/monkey_card.css' %}" rel="stylesheet">
+
+<div class="col-md-4 col-sm-6">
+    <a href="{% url 'monkeys:detail' monkey.code %}">
+      <div class="card mt-3">
+          <img src="{{ monkey }}" class="card-img-top" alt="monkey image">
+          <div class="card-body">
+            <h5 class="card-title">{{ monkey.code }}</h5>
+            <p class="card-text">{{ monkey.title }}</p>
+          </div>
+      </div>
+    </a>
+</div>

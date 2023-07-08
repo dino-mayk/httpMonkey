@@ -1,0 +1,8 @@
+.alert {
+    background-color: #444444;
+    color: white;
+}
+
+.alert-text {
+    font-size: 23px;
+}
