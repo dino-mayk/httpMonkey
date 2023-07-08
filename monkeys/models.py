@@ -9,6 +9,7 @@ class Monkey(models.Model):
     code = models.SmallIntegerField()
     title = models.CharField(
         unique=True,
+        max_length=25,
     )
     image = models.ImageField(
         upload_to='images/monkeys/%Y/%m',

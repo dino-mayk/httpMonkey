@@ -13,21 +13,14 @@ load_dotenv(dotenv_path)
 DEBUG = os.environ.get('DEBUG', default='True') == 'True'
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-ENGINE = os.environ.get('ENGINE')
-NAME = os.environ.get('NAME')
-USER = os.environ.get('USER')
-PASSWORD = os.environ.get('PASSWORD')
-HOST = os.environ.get('HOST')
-PORT = os.environ.get('PORT')
-
-ALLOWED_HOSTS = [
+"""ALLOWED_HOSTS = [
     '.vercel.app',
     '.now.sh',
 ]
-
-"""ALLOWED_HOSTS = [
+"""
+ALLOWED_HOSTS = [
     '*',
-]"""
+]
 
 
 INSTALLED_APPS = [
@@ -83,21 +76,14 @@ WSGI_APPLICATION = 'httpMonkey.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get("DB_NAME"),
+        'USER': os.environ.get("DB_USER"),
+        'PASSWORD': os.environ.get("DB_PASSWORD"),
+        'HOST': os.environ.get("DB_HOST"),
+        'PORT': os.environ.get("DB_PORT"),
     }
 }
-
-"""DATABASES = {
-    'default': {
-       'ENGINE': ENGINE,
-       'NAME': NAME,
-       'USER': USER,
-       'PASSWORD': PASSWORD,
-       'HOST': HOST,
-       'PORT': PORT,
-    }
-}"""
 
 if 'test' in sys.argv:
     DATABASES['default'] = {
@@ -138,13 +124,8 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static',]
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-"""STATICFILES_DIRS = [
-    BASE_DIR / 'static_dev',
-]
-STATIC_ROOT = BASE_DIR / 'static'"""
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
