@@ -7,21 +7,27 @@ from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-dotenv_path = join(dirname(__file__), '../dev.env')
+dotenv_path = join(dirname(__file__), '../.env')
 load_dotenv(dotenv_path)
 
 DEBUG = os.environ.get('DEBUG', default='True') == 'True'
 SECRET_KEY = os.environ.get('SECRET_KEY')
-ENGINE = os.environ.get('ENGINE')
+
+"""ENGINE = os.environ.get('ENGINE')
 NAME = os.environ.get('NAME')
 USER = os.environ.get('USER')
 PASSWORD = os.environ.get('PASSWORD')
 HOST = os.environ.get('HOST')
-PORT = os.environ.get('PORT')
+PORT = os.environ.get('PORT')"""
 
 ALLOWED_HOSTS = [
-    '*',
+    '.versel.app',
+    '.now.sh',
 ]
+
+"""ALLOWED_HOSTS = [
+    '*',
+]"""
 
 INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
@@ -76,6 +82,13 @@ WSGI_APPLICATION = 'httpMonkey.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+"""DATABASES = {
+    'default': {
        'ENGINE': ENGINE,
        'NAME': NAME,
        'USER': USER,
@@ -83,7 +96,7 @@ DATABASES = {
        'HOST': HOST,
        'PORT': PORT,
     }
-}
+}"""
 
 if 'test' in sys.argv:
     DATABASES['default'] = {
@@ -124,10 +137,13 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+
+"""STATICFILES_DIRS = [
     BASE_DIR / 'static_dev',
 ]
-STATIC_ROOT = 'static'
+STATIC_ROOT = BASE_DIR / 'static'"""
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
